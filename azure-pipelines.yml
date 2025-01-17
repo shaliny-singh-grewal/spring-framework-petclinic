@@ -5,7 +5,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Maven@1
+- task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -22,12 +22,12 @@ steps:
     Contents: '**/target/*.jar'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@3
+- task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
 
-- task: AzureWebApp@4
+- task: AzureWebApp@1
   inputs:
     azureSubscription: '854c915e-e21e-43c9-9adc-d2b6ba1c6224'
     appName: 'Shalinyss'
