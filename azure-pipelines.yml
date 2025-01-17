@@ -27,7 +27,7 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
 
-- task: AzureWebApp
+- task: AzureWebApp@2
   inputs:
     azureSubscription: '854c915e-e21e-43c9-9adc-d2b6ba1c6224'
     appName: 'Shalinyss'
